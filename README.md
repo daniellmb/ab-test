@@ -50,7 +50,7 @@ at your site gets variant B the next time they load the page or come back they g
 select a given variant by calling the `ab-select` method on the `<ab-test>` directive. How you track users is up to you,
 but since A/B tests aren't permanent a simple solution will most likely do very well. One way would be to use a cookie with
 [angular-uuid-service](https://github.com/daniellmb/angular-uuid-service) a light weight (214 byte) UUID generator service
-for AngularJS that can be installed using `bower`. See the demo for an example implementation.
+for AngularJS that can be installed using `bower`. See the [demo](http://daniellmb.github.io/ab-test/demo/) for an example implementation.
 
 ### Running the demo
 
@@ -62,12 +62,6 @@ You can pick one of these options:
 Then navigate your browser to `http://localhost:<port>/demo/index.html` to see the app running in
 your browser.
 
-### Running unit tests
-- Run `npm install` and `bower install` to make sure you have all the development dependencies.
-- Run `bash scripts/test.sh`
-- Re-run tests just change any of your source or test javascript files
-
-
 ### End to end testing
 Requires a webserver;
 
@@ -78,12 +72,11 @@ Requires a webserver;
 
 ## Testing
 - Run `npm install` and `bower install` to make sure you have all the development dependencies.
-- Run `npm test` to run both unit tests.
-- Run `npm run gulp` to update the .min.js and .map files.
+- Run `npm test` or `bash scripts/test.sh` to run all unit tests
 
 ## Contributing
 Pull requests welcome :)
-- Run `npm run gulp` to update the .min.js and .map files with any changes you have made to ab-test.js.
+- Run `npm run gulp` to update the .min.js and min.js.map files with any changes you have made to ab-test.js.
 
 
 ## License
