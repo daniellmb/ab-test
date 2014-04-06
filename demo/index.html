@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>ab-test demos</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+  <div class="container">
+
+    <h1>AngularJS A/B Test Service & Directives <a name="top" href="#top"></a></h1>
+
+    <p class="lead">The following examples are mix of <span class="label label-success">declarative</span> and
+      <span class="label label-primary">imperative</span> A/B/n Tests that run every 20 seconds.</p>
+
+    <ul>
+      <li><a href="#Headlines">Headlines & Sub-Headlines</a></li>
+      <li><a href="#Paragraph">Paragraph Text</a></li>
+      <li><a href="#Testimonials">Testimonials</a></li>
+      <li><a href="#Social">Social Proof</a></li>
+      <li><a href="#Media">Media Mentions</a></li>
+      <li><a href="#Buttons">Buttons (wording, size, color)</a></li>
+      <li><a href="#Pricing">Product Pricing</a></li>
+      <li><a href="#Promotional">Promotional Offers</a></li>
+      <li><a href="#Images">Images (wording, size, color)</a></li>
+      <li><a href="#Awards">Awards and Badges</a></li>
+    </ul>
+
+    <div class="row" ng-controller="HeadlinesCtrl">
+      <div class="col-md-12">
+        <h3><a name="Headlines" href="#"></a>Headlines & Sub-Headlines <a href="#top">&#8593;</a></h3>
+        <p>
+          One of the most common elements to A/B test on websites are headline variations.
+          This example shows how to default an inline value that is updated with <code>ng-bind</code>
+          (a one-way data binding from the $scope to view) once the A/B/n test is run.</p>
+        <h1 ng-bind="headline">Include Your Children When Baking Cookies</h1>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row" ng-controller="ParagraphCtrl">
+      <div class="col-md-12">
+        <h3>
+          <a name="Paragraph" href="#"></a>Paragraph Text
+          <button ng-click="runAgain()" type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-refresh"></span>
+          </button>
+          <a href="#top">&#8593;</a>
+        </h3>
+        <p>Changing a whole paragraph is probably more text than you want to maintain inside a JavaScript or JSON file.
+          This example shows how how to use the <code>&lt;ab-test&gt;</code> and <code>&lt;ab-variant&gt;</code> to
+          A/B test a large section of content.</p>
+        <p class="lead paragraphs">
+          <ab-test ab-frequency="1" ab-run="runAgain" ab-shown="onShow">
+            <ab-variant ab-data="{foo:'optional arbitrary information'}">
+              Aliquam eget scelerisque ipsum. Suspendisse a mi pulvinar purus ultrices malesuada. Aliquam semper, odio scelerisque feugiat consequat, orci tortor dignissim sapien, id molestie libero ligula eget massa. Nullam pulvinar gravida eros vel sollicitudin. Nullam arcu orci, sagittis ut justo vitae, vulputate tristique leo. Curabitur condimentum, nisl et aliquam tempor, quam augue hendrerit nibh, ac convallis erat elit non sem. Quisque vestibulum dignissim arcu, non dictum eros tristique eget.
+            </ab-variant>
+            <ab-variant>
+              Faucibus, mauris a vestibulum ultricies, turpis risus feugiat tellus, non porttitor tellus velit vel risus. Nulla condimentum lacus sed mauris sodales scelerisque. Nunc fermentum, lorem sed vulputate vulputate, enim est pulvinar arcu, ac molestie massa enim sed ligula. Quisque interdum lacinia lorem, non ullamcorper nisl ornare et. Nullam nec velit nec augue cursus aliquet eu ac magna. Sed consequat nulla id eros cursus, eget tincidunt enim dapibus. Mauris ultrices risus ac felis commodo condimentum. Curabitur diam tellus, mattis vel varius a, pharetra et quam. In hac habitasse platea dictumst.
+            </ab-variant>
+            <ab-variant>
+              Curabitur gravida, dolor eget commodo egestas, enim ante ullamcorper nulla, quis semper enim mi id quam. Proin non varius quam. Maecenas tempus tincidunt egestas. Cras sollicitudin posuere neque, et lobortis dui volutpat dictum. Fusce imperdiet sapien sit amet massa dictum venenatis. In ultrices aliquam bibendum. Phasellus non ante et quam bibendum consectetur ut in lacus. Proin lacus metus, pellentesque at massa sed, consectetur faucibus odio.
+            </ab-variant>
+            <ab-variant ab-control="true">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt faucibus urna, id auctor tellus pretium eget. Vivamus tempor vitae lectus non hendrerit. Pellentesque iaculis fermentum ligula, vel volutpat sapien lacinia id. Donec nisi lorem, cursus nec mattis vitae, pulvinar ut massa. Maecenas rutrum convallis lacus. Fusce ullamcorper, arcu id interdum varius, sapien enim egestas nisl, a tempus urna odio eu ante.
+            </ab-variant>
+          </ab-test>
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row" ng-controller="TestimonialsCtrl">
+      <div class="col-md-12">
+        <h3><a name="Testimonials" href="#"></a>Testimonials <a href="#top">&#8593;</a></h3>
+        <p>This example shows how to A/B test using a more complex model than a simple string or number. In this case an external JSON file is used to hold the values for <code ng-non-bindable>{{testimonial}}</code> and <code ng-non-bindable>{{name}}</code>.</p>
+        <blockquote>
+          <p>{{testimonial}}</p>
+          <footer>&#8212; {{name}}</footer>
+        </blockquote>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row" ng-controller="SocialCtrl">
+      <div class="col-md-12">
+        <h3><a name="Social" href="#"></a>Social Proof <a href="#top">&#8593;</a></h3>
+        <p>Social proof, also known as informational social influence, is a psychological phenomenon where people assume the actions of others in an attempt to reflect correct behavior for a given situation. This example shows an example of A/B/n testing the impact of social media on conversion rates using <code ng-non-bindable>{{likes}}</code> to test different values.</p>
+        <table class="fakebook">
+          <tr>
+            <td>Wow, you should really&nbsp;</td>
+            <td><div id="fake-like-rapper"><div class="fb-like" data-href="https://github.com/daniellmb" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div><div id="like-fake"><div class="connect_widget_button_count_including"><table class="uiGrid" cellspacing="0" cellpadding="0"><tbody><tr><td><div class="thumbs_up hidden_elem"></div></td><td><div class="undo hidden_elem"></div></td></tr><tr><td><div class="connect_widget_button_count_nub"><s></s><i></i></div></td><td><div class="connect_widget_button_count_count">{{likes}}</div></td></tr></tbody></table></div></div></div></td>
+            <td>&nbsp;ab-test!</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row" ng-controller="MediaCtrl">
+      <div class="col-md-12">
+        <h3><a name="Media" href="#"></a>Media Mentions <a href="#top">&#8593;</a></h3>
+        <p>A/B test the appeal of various media outlets on your target demographics. This example uses <code>ng-src</code> and the <code ng-non-bindable>{{asSeenOn}}</code> expression to A/B testing 3 different "as seen on" media images.</p>
+        <h2>ab-test is super popular! <small>as seen on</small></h2>
+        <img class="as-seen-on-media" ng-src="{{asSeenOn}}">
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row" ng-controller="ButtonsCtrl">
+      <div class="col-md-12">
+        <h3><a name="Buttons" href="#"></a>Buttons <a href="#top">&#8593;</a></h3>
+        <p>The presentation of "calls to action" have a massive impact on how effective they are! This example A/B tests the style of the button below from a list of 7 variants.</p>
+        <button id="star-repo-btn" type="button" class="btn btn-lg {{style}}">
+          <span class="glyphicon glyphicon-star"></span> Star this Repository!
+        </button>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row" ng-controller="PricingCtrl">
+      <div class="col-md-12">
+        <h3><a name="Pricing" href="#"></a>Product Pricing <a href="#top">&#8593;</a></h3>
+        <p>Coming soon, pull requests welcome :)</p>
+        <!-- TODO -->
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row" ng-controller="PromotionalCtrl">
+      <div class="col-md-12">
+        <h3><a name="Promotional" href="#"></a>Promotional <a href="#top">&#8593;</a></h3>
+        <p>Coming soon, pull requests welcome :)</p>
+        <!-- TODO -->
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row" ng-controller="ImagesCtrl">
+      <div class="col-md-12">
+        <h3><a name="Images" href="#"></a>Images <a href="#top">&#8593;</a></h3>
+        <p>Coming soon, pull requests welcome :)</p>
+        <!-- TODO -->
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row" ng-controller="AwardsCtrl">
+      <div class="col-md-12">
+        <h3><a name="Awards" href="#"></a>Awards and Badges <a href="#top">&#8593;</a></h3>
+        <p>Coming soon, pull requests welcome :)</p>
+        <!-- TODO -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- load angular (from google so this page will work when hosted on GitHub.io) -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-animate.min.js"></script>
+  <script src="js/demo-deps.js"></script>
+  <script src="../ab-test.js"></script>
+  <!-- load demo code -->
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1401488693436528";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

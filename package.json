@@ -1,0 +1,49 @@
+{
+  "name": "ab-test",
+  "version": "0.0.1",
+  "description": "AngularJS A/B Test Service and Directives for creating declarative and imperative A/B/n tests.",
+  "keywords": [
+    "angularjs",
+    "ab test",
+    "service",
+    "directive"
+  ],
+  "homepage": "https://github.com/daniellmb/ab-test",
+  "author": "Daniel Lamb (http://daniellmb.com)",
+  "maintainers": [],
+  "contributors": [],
+  "bugs": {
+    "url": "https://github.com/daniellmb/ab-test/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://daniellmb.mit-license.org"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/daniellmb/ab-test.git"
+  },
+  "main": "ab-test.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start ./config/karma.conf.js --single-run",
+    "gulp": "gulp"
+  },
+  "devDependencies": {
+    "gulp": "~3.5.6",
+    "gulp-ngmin": "~0.1.2",
+    "gulp-rename": "~1.2.0",
+    "gulp-uglify": "0.2.1",
+    "gulp-util": "~2.2.14",
+    "karma": "~0.12.0",
+    "karma-jasmine": "~0.1.5",
+    "karma-firefox-launcher": "~0.1.3",
+    "karma-coverage": "~0.2.0",
+    "karma-coveralls": "~0.1.4",
+    "protractor": "~0.17.0"
+  }
+}

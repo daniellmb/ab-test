@@ -1,0 +1,14 @@
+{
+  "name": "ab-test",
+  "version": "0.0.1",
+  "main": "ab-test.js",
+  "dependencies": {
+    "ab.js": "latest",
+    "ab-test-service": "latest",
+    "angular": "~1.2.14",
+    "angular-animate": "~1.2.14"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.14"
+  }
+}

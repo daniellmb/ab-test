@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- 0.1
+before_script:
+- npm install -g bower
+- bower install
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+env:
+  global:
+    secure: nkdr2t4mU6c+Cq6Grt+j0CUd3vlEzIJ/ZUDWZXUn2pXWrrM3a6tJ1ch1JS/LajiQjUU9NG006jgq1AYQ+sfkmaOt6C1ShtCw/woLN2Ph9Z0SELO8/CnWoj1JeSd8g7Yle09MM27X6OR51dzhSl2Nm6D7akBgCk4eHfvRtoIhBYU=
