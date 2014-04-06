@@ -7,5 +7,5 @@ before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 env:
-  matrix:
-    secure: bGXZgdswwW3GFuFPHXSNABplo8V5NV+APsU5SqJkZoVYknAqALXvjMAtPwI8gzm1Ye0X6sOBSh+m85MalQwEYlJxBaKEdnCy24ZE15ln8VlR97d14zMgjs2G0V9WTPKII6of0gkH3ebraervb7hGUFHl317mzMembCzi4Zd2Ngw=
+  global:
+    secure: nkdr2t4mU6c+Cq6Grt+j0CUd3vlEzIJ/ZUDWZXUn2pXWrrM3a6tJ1ch1JS/LajiQjUU9NG006jgq1AYQ+sfkmaOt6C1ShtCw/woLN2Ph9Z0SELO8/CnWoj1JeSd8g7Yle09MM27X6OR51dzhSl2Nm6D7akBgCk4eHfvRtoIhBYU=
