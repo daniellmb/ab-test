@@ -68,13 +68,12 @@ Requires a webserver;
 
 - Run `npm install` and `bower install` to make sure you have all the development dependencies.
 - Run `node ./scripts/web-server.js` or use your server that hosts the static files.
-- Run the tests from console with [Protractor](https://github.com/angular/protractor) via
+- Run the end-to-end tests from console with [Protractor](https://github.com/angular/protractor) via
     `bash scripts/e2e-test.sh`
 
 ## Testing
 - Run `npm install` and `bower install` to make sure you have all the development dependencies.
-- Run `npm test` to run both unit tests and end-to-end tests.
-- Run `npm run unit` to run all the unit tests.
+- Run `npm test` to run both unit tests.
 - Run `npm run gulp` to update the .min.js and .map files.
 
 ## Contributing
