@@ -3,18 +3,18 @@
 
 AngularJS A/B Test Service and Directives for creating declarative and imperative A/B/n tests.
 
-### Loads of Demos!
-  - Headlines & Sub-Headlines
-  - Paragraph Text
-  - Testimonials (Sticky Test)
-  - Links (wording, size, color)
-  - Buttons (wording, size, color)
-  - Images
-  - Social Proof
-  - Media Mentions
-  - Awards and Badges
-  - Product Pricing
-  - Promotional Offers
+### Loads of [Live Demos](http://daniellmb.github.io/ab-test/demo/)!
+
+  - [Headlines & Sub-Headlines](http://daniellmb.github.io/ab-test/demo/index.html#Headlines)
+  - [Paragraph Text](http://daniellmb.github.io/ab-test/demo/index.html#Paragraph)
+  - [Testimonials](http://daniellmb.github.io/ab-test/demo/index.html#Testimonials)
+  - [Social Proof](http://daniellmb.github.io/ab-test/demo/index.html#Social)
+  - [Media Mentions](http://daniellmb.github.io/ab-test/demo/index.html#Media)
+  - [Buttons (wording, size, color)](http://daniellmb.github.io/ab-test/demo/index.html#Buttons)
+  - [Product Pricing](http://daniellmb.github.io/ab-test/demo/index.html#Pricing)
+  - [Promotional Offers](http://daniellmb.github.io/ab-test/demo/index.html#Promotional)
+  - [Images (wording, size, color)](http://daniellmb.github.io/ab-test/demo/index.html#Images)
+  - [Awards and Badges](http://daniellmb.github.io/ab-test/demo/index.html#Awards)
 
 ## Install Choices
 - `bower install ab-test`
@@ -32,11 +32,16 @@ AngularJS A/B Test Service and Directives for creating declarative and imperativ
 ## `<ab-test>` Directive
 
 ### Properties
- - frequency
- - ab-run
- - ab-select
+ - ab-frequency - REQUIRED: how often to show run the a/b test
+ - ab-run - OPTIONAL: function to trigger running the test again
+ - ab-shown - OPTIONAL: function to call when a variant is shown
+ - ab-select (coming soon) - OPTIONAL: will be used to make sticky A/B tests
 
 ## `<ab-variant>` Directive
+### Properties
+ - ab-control - OPTIONAL: specify a variant as the A/B test "control"
+ - ab-data - OPTIONAL: arbitrary data you may want to link to a variant, useful when logging.
+
 
 ## Sticky Tests
 
