@@ -16,6 +16,10 @@ module.exports = function (config) {
       'test/unit/**/*.js'
     ],
 
+    preprocessors: {
+      'ab-test.js': ['coverage']
+    },
+
     exclude : [
       'test/lib/angular/angular-loader.js',
       'test/lib/angular/*.min.js',
@@ -44,13 +48,7 @@ module.exports = function (config) {
 
     browsers : ['Firefox'],
 
-    captureTimeout: 60000,
-
-    plugins : [
-      'karma-firefox-launcher',
-      'karma-jasmine',
-      'karma-coverage'
-    ]
+    captureTimeout: 60000
   });
 
   // have travis publish to coveralls
