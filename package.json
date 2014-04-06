@@ -29,7 +29,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start --browsers Firefox --single-run",
+    "test": "./node_modules/karma/bin/karma start ./config/karma.conf.js --single-run",
     "gulp": "gulp"
   },
   "devDependencies": {
