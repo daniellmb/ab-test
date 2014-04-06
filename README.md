@@ -20,14 +20,11 @@ AngularJS A/B Test Service and Directives for creating declarative and imperativ
 - `bower install ab-test`
 - [download the zip](https://github.com/daniellmb/ab-test/archive/master.zip)
 
-
 ## Setup
 1. Include the `ab-test.js` script provided by this component into your app.
 2. Add `ab.test` or `ab.test.directive` as a module dependency to your app.
 
-
 ## Usage
-
 
 ## `<ab-test>` Directive
 
@@ -42,7 +39,6 @@ AngularJS A/B Test Service and Directives for creating declarative and imperativ
  - ab-control - OPTIONAL: specify a variant as the A/B test "control"
  - ab-data - OPTIONAL: arbitrary data you may want to link to a variant, useful when logging.
 
-
 ## Sticky Tests
 
 Running an A/B test is great but it's even better if you make the tests "sticky" to the user. Meaning if someone
@@ -52,7 +48,7 @@ but since A/B tests aren't permanent a simple solution will most likely do very 
 [angular-uuid-service](https://github.com/daniellmb/angular-uuid-service) a light weight (214 byte) UUID generator service
 for AngularJS that can be installed using `bower`. See the [demo](http://daniellmb.github.io/ab-test/demo/) for an example implementation.
 
-### Running the demo
+### Running the demos
 
 You can pick one of these options:
 
@@ -62,6 +58,10 @@ You can pick one of these options:
 Then navigate your browser to `http://localhost:<port>/demo/index.html` to see the app running in
 your browser.
 
+## Testing
+- Run `npm install` and `bower install` to make sure you have all the development dependencies.
+- Run `npm test` or `bash scripts/test.sh` to run all unit tests
+
 ### End to end testing
 Requires a webserver;
 
@@ -70,14 +70,9 @@ Requires a webserver;
 - Run the end-to-end tests from console with [Protractor](https://github.com/angular/protractor) via
     `bash scripts/e2e-test.sh`
 
-## Testing
-- Run `npm install` and `bower install` to make sure you have all the development dependencies.
-- Run `npm test` or `bash scripts/test.sh` to run all unit tests
-
 ## Contributing
 Pull requests welcome :)
 - Run `npm run gulp` to update the .min.js and min.js.map files with any changes you have made to ab-test.js.
-
 
 ## License
 (The MIT License)
