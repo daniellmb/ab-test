@@ -1,5 +1,5 @@
 # ab-test
-[![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url] [![Bower version][bower-image]][bower-url] [![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Code GPA][cc-image]][cc-url]  [![Dependency Status][depstat-image]][depstat-url] [![Bower version][bower-image]][bower-url] [![NPM version][npm-image]][npm-url]
 
 AngularJS A/B Test Service and Directives for creating declarative and imperative A/B/n tests.
 
@@ -98,6 +98,8 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+[cc-url]: https://codeclimate.com/github/daniellmb/ab-test
+[cc-image]: https://codeclimate.com/github/daniellmb/ab-test.png
 [bower-url]: http://bower.io/search/?q=ab-test
 [bower-image]: https://badge.fury.io/bo/ab-test.png
 [npm-url]: https://npmjs.org/package/ab-test
