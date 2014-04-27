@@ -105,7 +105,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 [npm-url]: https://npmjs.org/package/ab-test
 [npm-image]: https://badge.fury.io/js/ab-test.png
 [travis-url]: https://travis-ci.org/daniellmb/ab-test
-[travis-image]: https://travis-ci.org/daniellmb/ab-test.png?branch=master
+[travis-image]: https://api.travis-ci.org/daniellmb/ab-test.png
 [coveralls-url]: https://coveralls.io/r/daniellmb/ab-test
 [coveralls-image]: https://coveralls.io/repos/daniellmb/ab-test/badge.png
 [depstat-url]: https://david-dm.org/daniellmb/ab-test
