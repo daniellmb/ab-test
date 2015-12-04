@@ -20,7 +20,8 @@ angular.module('ab.test.directive', ['ab.test.service', 'ngAnimate'])
   var ctrl = this,
       control = ctrl.control,
       variants = ctrl.variants = [],
-      shown = $scope.shown || angular.noop;
+      shown = $scope.shown || angular.noop,
+      select = $scope.select || angular.noop;
 
   // register an a/b test variant
   ctrl.add = function add(variant) {
@@ -35,6 +36,17 @@ angular.module('ab.test.directive', ['ab.test.service', 'ngAnimate'])
     }
   };
 
+  function getResultFromSelect() {
+    var result = null;
+    var toSelect = $scope.select();
+    variants.forEach(function(elem) {
+      if(elem.uid === toSelect || elem.uid === parseInt(toSelect)) {
+        result = elem;
+      }
+    });
+    return result;
+  }
+
   // run the ab test
   $scope.run = function run() {
     // hide active variant
@@ -42,8 +54,16 @@ angular.module('ab.test.directive', ['ab.test.service', 'ngAnimate'])
       ctrl.variant.active = false;
     }
 
-    // run an A/B test to choose a variant
-    var result = ab.test(variants, $scope.frequency);
+    var result= null;
+
+    // If user provides their own selection function, use that
+    if($scope.select) {
+      result = getResultFromSelect();
+    }
+
+    if(!result) {
+      result = ab.test(variants, $scope.frequency);
+    }
 
     // check if there is a variant to show
     if (result) {
@@ -79,7 +99,8 @@ angular.module('ab.test.directive', ['ab.test.service', 'ngAnimate'])
       run: '=?abRun',
       shown: '=?abShown',
       // (required) two way binding
-      frequency: '=abFrequency'
+      frequency: '=abFrequency',
+      select: '=?abSelect'
     },
     compile: function compile(elm, attrs) {
 
@@ -121,6 +142,7 @@ angular.module('ab.test.directive', ['ab.test.service', 'ngAnimate'])
     transclude: true,
     template: '<div ng-transclude ng-show="active" class="ng-class:{\'ab-active\':active}; ab-animate"></div>',
     scope: {
+      uid: '=abUid',
       // (optional) two way binding
       active: '=?abActive',
       control: '=?abControl',

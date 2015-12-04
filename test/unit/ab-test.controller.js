@@ -118,7 +118,7 @@ describe('ab-test controller', function () {
       it('should show the variant', function () {
         // arrange
         abSvcTestResult = {};
-        var control = {control: true};
+        var control = {control: true, uid: 'control'};
         abTestCtrl.add(control);
         // act
         scope.run();
@@ -129,13 +129,25 @@ describe('ab-test controller', function () {
       it('should call abShown with the variant', function () {
         // arrange
         abSvcTestResult = {};
-        var control = {control: true};
+        var control = {control: true, uid: 'control'};
         abTestCtrl.add(control);
         // act
         scope.run();
         // assert
         expect(abTestCtrl.variant).not.toBe(control);
         expect(abTestCtrl.variant).toBe(abSvcTestResult);
+      });
+      it('should select a variant based on ab-select', function () {
+        // arrange
+        var variant1 = {uid: 'variant1'};
+        var variant2 = {uid: 'variant2'};
+        scope.select = function() {return 'variant2'};
+        abTestCtrl.add(variant1);
+        abTestCtrl.add(variant2);
+        // act
+        scope.run();
+        // assert
+        expect(abTestCtrl.variant).toBe(variant2);
       });
     });
 
