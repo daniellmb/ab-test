@@ -39,7 +39,7 @@ angular.module('ab.test.directive', ['ab.test.service', 'ngAnimate'])
   function getResultFromSelect() {
     var result = null;
     var toSelect = $scope.select();
-    variants.forEach(function(elem) {
+    angular.forEach(variants, function(elem) {
       if(elem.uid === toSelect || elem.uid === parseInt(toSelect)) {
         result = elem;
       }
