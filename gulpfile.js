@@ -12,7 +12,7 @@ gulp.task('default', function () {
     .pipe(jshint.reporter('fail'))
     .pipe(complexity({
       cyclomatic: [8],
-      halstead: [9],
+      halstead: [10],
       maintainability: [100]
     }))
     .pipe(rename('ab-test.min.js'))

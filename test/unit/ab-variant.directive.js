@@ -7,9 +7,9 @@ describe('ab-variant directive', function () {
         return this;
       },
       validTemplate = '<ab-test ab-frequency="freq">' +
-                        '<ab-variant ab-data="data">A</ab-variant>' +
-                        '<ab-variant ab-active="active">B</ab-variant>' +
-                        '<ab-variant ab-control="true">C</ab-variant>' +
+                        '<ab-variant ab-data="data" ab-uid="a">A</ab-variant>' +
+                        '<ab-variant ab-active="active" ab-uid="b">B</ab-variant>' +
+                        '<ab-variant ab-control="true" ab-uid="c">C</ab-variant>' +
                       '</ab-test>';
 
   // Use to provide any mocks needed
