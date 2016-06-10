@@ -21,7 +21,7 @@ AngularJS A/B Test Service and Directives for creating declarative and imperativ
 - [download the zip](https://github.com/daniellmb/ab-test/archive/master.zip)
 
 ## Setup
-1. Include the `ab-test.js` script provided by this component into your app.
+1. Include the `ab-test.js` and `ab-test-service.js` scripts provided by this component into your app.
 2. Add `ab.test` or `ab.test.directive` as a module dependency to your app.
 
 ## Usage
